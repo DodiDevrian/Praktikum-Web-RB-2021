@@ -1,0 +1,29 @@
+body {
+    width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+input {
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+button {
+    border: none;
+    width: 70px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: yellow;
+}
+
+button:hover {
+    background: #f2fda9
+}
