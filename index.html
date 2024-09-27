@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tugas Minggu 3</title>
+	<link rel="shortcut icon" href="http://siakad.itera.ac.id/assets/img/logo%20itera%20oke.png">
+</head>
+<body>
+	<div class="tema">
+		<label>Pilih Tema</label>
+		<select onchange="pilihTema(value)">
+			<option value="light">☀️</option>
+			<option value="dark">🌙</option>
+		</select>
+	</div>
+	<h2 class="tema">This Is My Website For Tugas Minggu 3</h2>
+	<div class="tema">
+		<label>Pilih Keyword</label>
+		<select onchange="pilihMerk(value)">
+			<option value="acer">Acer</option>
+			<option value="asus">Asus</option>
+			<option value="lenovo">Lenovo</option>
+		</select>
+	</div>
+	<p class="tema" id="merk">Acer merupakan sebuah merek lima besar komputer pribadi dunia. Produk Acer antara lain adalah desktop, notebook, server, penyimpanan data, layar, peripheral, dan solusi e-bisnis untuk bisnis, pemerintah, pendidikan dan pengguna pribadi.</p>
+
+	<div class="tema">
+		<h4>Faktorial</h4>
+		<label>Input Angka : </label>
+		<input type="number" name="" id="input">
+		<button onclick="faktorial()">Cek Faktorial</button>
+		<p id="faktorial"></p>
+	</div>
+	<script type="text/javascript">
+		function pilihTema(value) {
+			var tema = document.getElementsByClassName("tema")
+
+			if (value == "light") {
+				for (let i = 0; i < tema.length; i++) {
+					tema[i].style.color='black'
+				}
+				document.body.style.background = 'white'
+			} else{
+				for (let i = 0; i < tema.length; i++) {
+					tema[i].style.color='white'
+				}
+				document.body.style.background = 'black'
+			}
+		}
+
+		function pilihMerk(value) {
+			var merk = document.getElementById("merk")
+			if (value == "acer") {
+				merk.innerHTML = "Acer merupakan sebuah merek lima besar komputer pribadi dunia. Produk Acer antara lain adalah desktop, notebook, server, penyimpanan data, layar, peripheral, dan solusi e-bisnis untuk bisnis, pemerintah, pendidikan dan pengguna pribadi."
+			}else if (value == "asus") {
+				merk.innerHTML = "Asustek Computer Inc. ditulis dengan gaya huruf kapital ASUS, adalah sebuah perusahaan berbasis di Taiwan yang memproduksi komponen komputer seperti papan induk, kartu grafis, dan notebook. Asus belakangan ini mulai memproduksi PDA, Telepon genggam, monitor LCD, tablet dan produk komputer lainnya."
+			}else {
+				merk.innerHTML = "Lenovo Group Limited, sebelumnya dikenal dengan nama Legend Group, adalah produsen PC terbesar di Republik Rakyat Tiongkok. Pada 2004, Lenovo adalah produsen PC terbesar kedelapan di dunia."
+			}
+		}
+
+		function faktorial() {
+		    var input = document.getElementById("input").value
+		    var hasil = input
+		    console.log(input)
+
+		    for (let i = hasil - 1; i > 0; i--) {
+		        hasil *= i
+		    }
+
+		    var faktorial = document.getElementById("faktorial")
+		    faktorial.innerHTML = `Hasil Faktorial Dari ${input} Adalah ${hasil}`
+		}
+	</script>
+</body>
+</html>
